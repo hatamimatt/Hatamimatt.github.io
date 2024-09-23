@@ -1,0 +1,48 @@
+/* Custom styles for the presentations page */
+.presentation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.presentation-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.presentation-content th,
+.presentation-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.presentation-content th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+.presentation-content td {
+    vertical-align: top;
+}
+
+.presentation-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

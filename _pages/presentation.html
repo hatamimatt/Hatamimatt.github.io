@@ -1,96 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentations</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
+---
+layout: archive
+title: "Presentations"
+permalink: /presentations/
+author_profile: true
+---
 
-        table, th, td {
-            border: 1px solid black;
-        }
+{% if site.author.googlescholar %}
+<div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar
+        profile</a>.</div>
+{% endif %}
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+{% include base_path %}
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
-<body>
-
-<h1>Presentations</h1>
-
-<div class="presentation-content">
-
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Link</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Presentation for Tools for Risk Management Course</td>
-                <td>2021-12-10</td>
-                <td>Politecnico di Milano (Italy)</td>
-                <td><a href="https://www.youtube.com/watch?v=wirIVdNAxLg&t=2s" target="_blank">Watch Video</a></td>
-            </tr>
-            <tr>
-                <td>Presentation for Geo-Engineering Techniques for Unstable Slopes Course</td>
-                <td>2022-11-22</td>
-                <td>Politecnico di Milano (Italy)</td>
-                <td><a href="https://www.youtube.com/watch?v=Iwni2b6RGhs" target="_blank">Watch Video</a></td>
-            </tr>
-            <tr>
-                <td>My Master's Thesis Presentation</td>
-                <td>2024-04-10</td>
-                <td>Politecnico di Milano (Italy)</td>
-                <td><a href="https://www.youtube.com/watch?v=dJ07ccRr4yk&t=350s" target="_blank">Watch Video</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>Presentations</h2>
-
-    <h3>Presentation for Tools for Risk Management Course</h3>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/wirIVdNAxLg?start=2" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <h3>Presentation for Geo-Engineering Techniques for Unstable Slopes Course</h3>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/Iwni2b6RGhs" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <h3>My Master's Thesis Presentation</h3>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dJ07ccRr4yk?start=350" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-</div>
-
-</body>
-</html>
+<!-- New style rendering if publication categories are defined -->
+{% if site.publication_category %}
+{% for category in site.publication_category %}
+{% assign title_shown = false %}
+{% for post in site.publications reversed %}
+{% if post.category != category[0] %}
+{% continue %}
+{% endif %}
+{% unless title_shown %}
+<h2>{{ category[1].title }}</h2>
+<hr />
+{% assign title_shown = true %}
+{% endunless %}
+{% include archive-single.html %}
+{% endfor %}
+{% endfor %}
+{% else %}
+{% for post in site.publications reversed %}
+{% include archive-single.html %}
+{% endfor %}
+{% endif %}

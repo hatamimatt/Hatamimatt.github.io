@@ -42,6 +42,8 @@ author_profile: true
 </table>
 
 <!-- New style rendering if publication categories are defined -->
+<!-- Commenting out the publication-related block to avoid including it on this page -->
+{#
 {% if site.publication_category %}
 {% for category in site.publication_category %}
 {% assign title_shown = false %}
@@ -62,3 +64,4 @@ author_profile: true
 {% include archive-single.html %}
 {% endfor %}
 {% endif %}
+#}

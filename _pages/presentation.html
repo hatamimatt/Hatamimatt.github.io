@@ -7,10 +7,39 @@ author_profile: true
 
 {% if site.author.googlescholar %}
 <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar
-        profile</a>.</div>
+                profile</a>.</div>
 {% endif %}
 
 {% include base_path %}
+
+<h2>Presentations Table</h2>
+
+<table>
+        <thead>
+                <tr>
+                        <th>Topic</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr>
+                        <td>Presentation 1</td>
+                        <td>A detailed overview of flood resilience techniques.</td>
+                        <td><a href="https://example.com/presentation1" target="_blank">View Presentation</a></td>
+                </tr>
+                <tr>
+                        <td>Presentation 2</td>
+                        <td>Machine learning applications in water resources.</td>
+                        <td><a href="https://example.com/presentation2" target="_blank">View Presentation</a></td>
+                </tr>
+                <tr>
+                        <td>Presentation 3</td>
+                        <td>Advances in geospatial modeling and prediction.</td>
+                        <td><a href="https://example.com/presentation3" target="_blank">View Presentation</a></td>
+                </tr>
+        </tbody>
+</table>
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}

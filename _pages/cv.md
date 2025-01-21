@@ -11,7 +11,7 @@ redirect_from:
 
 <h2>Curriculum Vitae</h2>
 
-<p>View or download my CV below:</p>
+<p>View or download my CV below: (January 21st, 2025 update.)</p>
 
 <!-- Embed the PDF -->
 <embed src="/files/resume.pdf" type="application/pdf" width="100%" height="800px">

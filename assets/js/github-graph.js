@@ -1,6 +1,6 @@
 // Configuration
 const username = "matthewhatami"; // Replace with your GitHub username
-const token = "your_personal_access_token"; // Replace with your GitHub personal access token
+const token = "ghp_sZhsosMI3iA3WArEZYCSfYylQqZrix47pnn"; // Your GitHub personal access token
 
 // Fetch contributions data
 async function fetchGitHubActivity() {

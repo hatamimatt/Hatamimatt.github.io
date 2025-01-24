@@ -26,3 +26,7 @@ My academic journey began with a BSc in Civil Engineering from the [Internationa
     frameborder="0"
     style="width: 100%; height: 200px; border: none; overflow: hidden;">
 </iframe>
+
+
+**Interactive GitHub Contributions:**
+<canvas id="githubGraph" style="width: 100%; max-width: 600px; height: 400px;"></canvas>

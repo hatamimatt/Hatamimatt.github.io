@@ -15,3 +15,14 @@ I earned my MSc degree from the [Polytechnic University of Milan](https://polimi
 
 My academic journey began with a BSc in Civil Engineering from the [International University of Imam Khomeini (IKIU)](https://ikiu.ac.ir/en/). During my undergraduate studies, I developed a strong interest in river hydrology and hydraulics, which sparked my fascination with floods and flood risk. This early passion laid the foundation for my subsequent research pursuits in my Master's and PhD programs, shaping my focus on disaster management and flood resilience.
 
+
+**GitHub Contributions:**
+![GitHub Contributions](https://ghchart.rshah.org/matthewhatami)
+
+
+**GitHub Contributions:**
+<iframe 
+    src="https://github.com/users/matthewhatami/contributions"
+    frameborder="0"
+    style="width: 100%; height: 200px; border: none; overflow: hidden;">
+</iframe>

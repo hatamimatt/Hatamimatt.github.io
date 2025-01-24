@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Flood Prediction Using AI"
+title: "Gpem project copy 3"
 excerpt: "Using machine learning to predict and mitigate flood risks."
 permalink: /projects/flood-prediction-ai/
 category: machine-learning

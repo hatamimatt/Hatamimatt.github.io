@@ -1,0 +1,70 @@
+/* Grid container */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal-width columns */
+    gap: 20px;
+    /* Space between items */
+    margin-top: 20px;
+}
+
+/* Individual project card */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Background image with 4:3 aspect ratio */
+.project-image {
+    width: 100%;
+    /* Full width of the column */
+    aspect-ratio: 4 / 3;
+    /* Maintain a 4:3 aspect ratio */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dark overlay with text */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Hover effects */
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        /* Single column for mobile */
+    }
+}

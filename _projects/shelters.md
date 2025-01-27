@@ -3,8 +3,8 @@ layout: single
 title: "WebGIS Services to Support Shelters Location"
 excerpt: "Using ArcGIS Pro to find the most suitable locations for shelters in Lazio region in Italy"
 permalink: /projects/lazioShelters/
-category: GIS
-image: webGISProjectCoverPhoto.png
+category: MSc.
+image: /images/webGISProjectCoverPhoto.png
 ---
  **Geospatial Data Processing to Support Seismic Emergency Management: A WebGIS Approach for Shelter Location Planning in Amatrice, Italy**
 
@@ -25,25 +25,25 @@ The goal is to identify and rank suitable shelter locations using a structured f
 A WebGIS portal (built on ArcGIS Online and GeoNode) visualizes results, enabling real-time decision-making for authorities during emergencies.  
 
 ---
-![Workflow Diagram](https://matthewhatami.github.io/projects/framework.jpg)  
+![Workflow Diagram](https://matthewhatami.github.io/images/framework.jpg)  
 *Figure 1: Four-phase workflow for shelter location planning.*
 ## **Key Components**  
 
 ### **1. Geological and Hazard Analysis**  
 - **Phase 1**: Excluded areas with slopes >10°, clay-rich soils, dense forests, and urban zones.  
 - **Phase 2**: Filtered flood-prone zones, landslide-susceptible areas, and proximity to hazards (e.g., fuel stations, power grids).  
-![Output of Phase 1 and Phase 2](https://matthewhatami.github.io/projects/phase1and2.jpg)  
+![Output of Phase 1 and Phase 2](https://matthewhatami.github.io/images/phase1and2.jpg)  
 *Figure 2: Output of Phase 1 and 2.*
 ### **2. Serviceability and Lifelines**  
 - **Phase 3**: Ranked remaining areas by accessibility to roads, medical centers, water sources, and police stations. High-population zones received priority.  
-![Output of Phase 3](https://matthewhatami.github.io/projects/phase3.jpg)  
+![Output of Phase 3](https://matthewhatami.github.io/images/phase3.jpg)  
 *Figure 3: Output of Phase 3.*
 
 - **Phase 4**: Categorized shelters for specific needs:  
   - **Medical priority**: Near hospitals.  
   - **Family-friendly**: Close to residential areas.  
   - **First responders**: Central locations for rapid deployment.  
-![Output of Phase 4](https://matthewhatami.github.io/projects/phase4.jpg)  
+![Output of Phase 4](https://matthewhatami.github.io/images/phase4.jpg)  
 *Figure 4: Output of Phase 4.*
 ### **3. WebGIS Implementation**  
 - **ArcGIS Online**: Interactive maps, dashboards, and real-time road network updates. Features include:  
@@ -52,10 +52,10 @@ A WebGIS portal (built on ArcGIS Online and GeoNode) visualizes results, enablin
   - Synchronized emergency route maps.  
   - **GeoNode**: Open-source redundancy with downloadable datasets and customizable layers.  
 
-  ![dashboardInterface](https://matthewhatami.github.io/projects/dashboardInterface.jpg)  
+  ![dashboardInterface](https://matthewhatami.github.io/images/dashboardInterface.jpg)  
 *Figure 5: ArcGIS Online Dashboard Interface.*
 
-  ![geonodeWebpage](https://matthewhatami.github.io/projects/geonodeWebpage.jpg)  
+  ![geonodeWebpage](https://matthewhatami.github.io/images/geonodeWebpage.jpg)  
 *Figure 6: Open-source GeoNode webpage.*
 ---
 

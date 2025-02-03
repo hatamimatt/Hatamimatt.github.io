@@ -2,7 +2,7 @@
 layout: single
 title: "Shallow Landslide Risks: A Multidisciplinary Approach"
 excerpt: "Investigating risk of shallow landslides using geological, photogrammetric, and geophysical prespectives"
-permalink: /projects/ml-water-prediction/
+permalink: /projects/getus/
 category: MSc.
 image: /images/landslide1.jpg
 ---
@@ -100,3 +100,5 @@ By integrating geological, photogrammetric, and geophysical perspectives, this s
 - Multidisciplinary techniques validate and complement one another, offering robust tools for landslide risk assessment.
 
 This comprehensive approach underscores the value of combining diverse methodologies to enhance predictive models and inform mitigation strategies for landslide-prone regions.
+
+<p>To read the full report of the project you can <a href="/files/GETUS_REPORT.pdf" target="_blank">download it here</a>.</p>

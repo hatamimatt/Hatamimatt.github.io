@@ -15,5 +15,4 @@ redirect_from:
 
 <!-- Embed the PDF -->
 <iframe src="/files/resume.pdf" width="100%" height="800px" style="border:none;"></iframe>
-
 <p>If the PDF does not load, you can <a href="/files/resume.pdf" target="_blank">download it here</a>.</p>

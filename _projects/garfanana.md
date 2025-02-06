@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: archive
 title: "Risk Assessment of Garfanana Valley"
 excerpt: "A systematic approach to studying the risk of garfanana valley by considering hazards, vulnerabilities, and exposure."
 permalink: /projects/garfanana/

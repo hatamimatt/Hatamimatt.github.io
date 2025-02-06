@@ -1,13 +1,13 @@
 ---
-layout: single
+layout: archive
 title: "WebGIS Services to Support Shelters Location"
 excerpt: "Using ArcGIS Pro to find the most suitable locations for shelters in Lazio region in Italy"
-permalink: /projects/lazioShelters/
+permalink: /projects/lazioShelters1/
 category: MSc.
 image: /images/webGISProjectCoverPhoto.png
+classes: projects-page  # Add this line
 ---
  **Geospatial Data Processing to Support Seismic Emergency Management: A WebGIS Approach for Shelter Location Planning in Amatrice, Italy**
-
 ---
 
 ## **Introduction**  
@@ -32,19 +32,16 @@ A WebGIS portal (built on ArcGIS Online and GeoNode) visualizes results, enablin
 ### **1. Geological and Hazard Analysis**  
 - **Phase 1**: Excluded areas with slopes >10°, clay-rich soils, dense forests, and urban zones.  
 - **Phase 2**: Filtered flood-prone zones, landslide-susceptible areas, and proximity to hazards (e.g., fuel stations, power grids).  
-![Output of Phase 1 and Phase 2](https://matthewhatami.github.io/images/phase1and2.jpg)  
-*Figure 2: Output of Phase 1 and 2.*
+
 ### **2. Serviceability and Lifelines**  
 - **Phase 3**: Ranked remaining areas by accessibility to roads, medical centers, water sources, and police stations. High-population zones received priority.  
-![Output of Phase 3](https://matthewhatami.github.io/images/phase3.jpg)  
-*Figure 3: Output of Phase 3.*
+
 
 - **Phase 4**: Categorized shelters for specific needs:  
   - **Medical priority**: Near hospitals.  
   - **Family-friendly**: Close to residential areas.  
   - **First responders**: Central locations for rapid deployment.  
-![Output of Phase 4](https://matthewhatami.github.io/images/phase4.jpg)  
-*Figure 4: Output of Phase 4.*
+
 ### **3. WebGIS Implementation**  
 - **ArcGIS Online**: Interactive maps, dashboards, and real-time road network updates. Features include:  
   - Distance/area measurement tools.  
@@ -52,11 +49,6 @@ A WebGIS portal (built on ArcGIS Online and GeoNode) visualizes results, enablin
   - Synchronized emergency route maps.  
   - **GeoNode**: Open-source redundancy with downloadable datasets and customizable layers.  
 
-  ![dashboardInterface](https://matthewhatami.github.io/images/dashboardInterface.jpg)  
-*Figure 5: ArcGIS Online Dashboard Interface.*
-
-  ![geonodeWebpage](https://matthewhatami.github.io/images/geonodeWebpage.jpg)  
-*Figure 6: Open-source GeoNode webpage.*
 ---
 
 ## **Data and Methodology**  
@@ -90,6 +82,6 @@ This project exemplifies how geospatial technologies enhance disaster resilience
 *Authored by Matthew (Mehdi) Hatami Goloujeh, Ahmed Gamal Mahmoud Ebrahim Salem, and Ahmed Ibrahim Yousef Soliman Elmahdy. Supervised by Prof. Daniela Carrion, Prof. Maria Pia Boni, and Prof. Scira Menoni.*  
 
 ---  
-*References included in the original report are available upon request.*  
+<iframe src="/files/GPEMpdf.pdf" width="100%" height="800px" style="border:none;"></iframe>
 
 <p>To read the full report of the project you can <a href="/files/webGISsheltersProject.pdf" target="_blank">download it here</a>.</p>

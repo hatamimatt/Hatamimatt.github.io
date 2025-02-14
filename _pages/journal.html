@@ -4,7 +4,7 @@ title: "Learning Journal"
 permalink: /journal/
 author_profile: true
 redirect_from:
-  - /journal
+- /journal
 ---
 
 <h2>My Learning Journey</h2>
@@ -16,31 +16,37 @@ redirect_from:
 <script src="https://unpkg.com/vis-timeline@7.4.6/standalone/umd/vis-timeline-graph2d.min.js"></script>
 
 <script>
-  // Define groups
+  // Define groups (categories of learning)
   var groups = new vis.DataSet([
-    {id: 1, content: "Courses", value: 1},
-    {id: 2, content: "Research", value: 2},
-    {id: 3, content: "Achievements", value: 3}
+    { id: 1, content: "Courses", value: 1 },
+    { id: 2, content: "Research", value: 2 },
+    { id: 3, content: "Achievements", value: 3 }
   ]);
 
   // Define timeline events
   var items = new vis.DataSet([
-    {id: 1, group: 1, content: "Bayesian Networks Course", start: "2024-01"},
-    {id: 2, group: 1, content: "ML & GIS Course", start: "2024-07"},
-    {id: 3, group: 2, content: "Started Flood Research", start: "2024-06"},
-    {id: 4, group: 2, content: "Reservoir Optimization Study", start: "2025-03"},
-    {id: 5, group: 3, content: "Won Data Challenge", start: "2025-01"},
-    {id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20"}
+    { id: 1, group: 1, content: "Bayesian Networks Course", start: "2024-01" },
+    { id: 2, group: 1, content: "ML & GIS Course", start: "2024-07" },
+    { id: 3, group: 2, content: "Started Flood Research", start: "2024-06" },
+    { id: 4, group: 2, content: "Reservoir Optimization Study", start: "2025-03" },
+    { id: 5, group: 3, content: "Won Data Challenge", start: "2025-01" },
+    { id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20" }
   ]);
 
-  // Timeline options
+  // Timeline options with zoom disabled and horizontal scroll enabled
   var options = {
     groupOrder: function (a, b) {
       return a.value - b.value;
     },
     stack: false,
     showCurrentTime: true,
-    zoomable: true,
+    zoomable: false, // Lock zoom level
+    horizontalScroll: true, // Enable horizontal scrolling
+    moveable: true, // Allow dragging with the mouse
+    wheel: {
+      zoomSpeed: 0, // Completely disable zooming with scroll wheel
+      deltaSpeed: 1 // Adjust scroll sensitivity (increase for faster scrolling)
+    },
     height: "500px",
     margin: { item: 10 },
     start: "2023-01-01",

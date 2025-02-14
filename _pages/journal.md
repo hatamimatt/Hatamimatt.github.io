@@ -7,7 +7,7 @@ redirect_from:
 - /journal
 ---
 
-<h2>My Learning Journey</h2>
+# My Learning Journey
 
 <!-- Timeline Container -->
 <div id="timeline" style="width: 100%; height: 500px;"></div>
@@ -17,7 +17,6 @@ redirect_from:
 <link href="https://unpkg.com/vis-timeline@7.4.6/styles/vis-timeline-graph2d.min.css" rel="stylesheet"
   type="text/css" />
 
-  
 <script>
   // Define groups (categories of learning)
   var groups = new vis.DataSet([

@@ -7,58 +7,69 @@ redirect_from:
 - /journal
 ---
 
-# My Learning Journey
-
+**# My Learning Journey**
 <!-- Timeline Container -->
 <div id="timeline" style="width: 100%; height: 500px;"></div>
 
-<!-- Include Vis.js Library -->
-<script src="https://unpkg.com/vis-timeline@7.4.6/standalone/umd/vis-timeline-graph2d.min.js"></script>
-<link href="https://unpkg.com/vis-timeline@7.4.6/styles/vis-timeline-graph2d.min.css" rel="stylesheet"
-  type="text/css" />
+<!-- Include Vis.js Library with Integrity and Crossorigin attributes -->
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.6/vis-timeline-graph2d.min.js" 
+    integrity="sha512-SHF0iT1dsLkYBtmH9uZObaWGXF7Ot+HgaX5qQ45k37E4q+9YGN3jUEfMwp9gUAPkxgV3tIH2GsPSqwSAtUqmg==" 
+    crossorigin="anonymous">
+</script>
+<link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.6/vis-timeline-graph2d.min.css" 
+    integrity="sha512-SYyS55ZqHWmQ1RlgCo3mR4/WxjEBBNWbzjlA8NPZhGv2E4oq2xqZadZz3PqVpcz4qSRY3s2QBZ14UHF7coazqw==" 
+    crossorigin="anonymous"
+/>
 
 <script>
-  // Define groups (categories of learning)
-  var groups = new vis.DataSet([
-    { id: 1, content: "Courses", value: 1 },
-    { id: 2, content: "Research", value: 2 },
-    { id: 3, content: "Achievements", value: 3 }
-  ]);
+document.addEventListener('DOMContentLoaded', function() {
+    // Define groups (categories of learning)
+    var groups = new vis.DataSet([
+        { id: 1, content: "Courses", value: 1 },
+        { id: 2, content: "Research", value: 2 },
+        { id: 3, content: "Achievements", value: 3 }
+    ]);
 
-  // Define timeline events
-  var items = new vis.DataSet([
-    { id: 1, group: 1, content: "Bayesian Networks Course", start: "2024-01" },
-    { id: 2, group: 1, content: "ML & GIS Course", start: "2024-07" },
-    { id: 3, group: 2, content: "Started Flood Research", start: "2024-06" },
-    { id: 4, group: 2, content: "Reservoir Optimization Study", start: "2025-03" },
-    { id: 5, group: 3, content: "Won Data Challenge", start: "2025-01" },
-    { id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20" }
-  ]);
+    // Define timeline events
+    var items = new vis.DataSet([
+        { id: 1, group: 1, content: "Bayesian Networks Course", start: "2024-01" },
+        { id: 2, group: 1, content: "ML & GIS Course", start: "2024-07" },
+        { id: 3, group: 2, content: "Started Flood Research", start: "2024-06" },
+        { id: 4, group: 2, content: "Reservoir Optimization Study", start: "2025-03" },
+        { id: 5, group: 3, content: "Won Data Challenge", start: "2025-01" },
+        { id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20" }
+    ]);
 
-  // Timeline options with zoom disabled and horizontal scroll enabled
-  var options = {
-    groupOrder: function (a, b) {
-      return a.value - b.value;
-    },
-    stack: false,
-    showCurrentTime: true,
-    zoomable: false, // Lock zoom level
-    horizontalScroll: true, // Enable horizontal scrolling
-    moveable: true, // Allow dragging with the mouse
-    wheel: {
-      zoomSpeed: 0, // Completely disable zooming with scroll wheel
-      deltaSpeed: 1 // Adjust scroll sensitivity (increase for faster scrolling)
-    },
-    height: "500px",
-    margin: { item: 10 },
-    start: "2023-01-01",
-    end: "2026-12-31"
-  };
+    // Timeline options with zoom disabled and horizontal scroll enabled
+    var options = {
+        groupOrder: function (a, b) {
+            return a.value - b.value;
+        },
+        stack: false,
+        showCurrentTime: true,
+        zoomable: false,
+        horizontalScroll: true,
+        moveable: true,
+        wheel: {
+            zoomSpeed: 0,
+            deltaSpeed: 1
+        },
+        height: "500px",
+        margin: { item: 10 },
+        start: "2023-01-01",
+        end: "2026-12-31"
+    };
 
-  // Create timeline
-  var container = document.getElementById("timeline");
-  var timeline = new vis.Timeline(container);
-  timeline.setGroups(groups);
-  timeline.setItems(items);
-  timeline.setOptions(options);
+    // Create timeline
+    var container = document.getElementById("timeline");
+    try {
+        var timeline = new vis.Timeline(container, items, groups, options);
+    } catch (err) {
+        console.error("Timeline creation error:", err);
+        container.innerHTML = "Error loading timeline. Please check console for details.";
+    }
+});
 </script>

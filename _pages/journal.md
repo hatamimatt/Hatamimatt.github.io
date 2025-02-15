@@ -1,3 +1,11 @@
+---
+layout: archive
+title: "Learning Journal"
+permalink: /journal/
+author_profile: true
+redirect_from:
+- /journal
+---
 <script>
 window.addEventListener("load", function() {
     console.log("✅ Page fully loaded, initializing timeline...");

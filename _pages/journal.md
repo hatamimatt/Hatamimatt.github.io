@@ -1,37 +1,19 @@
----
-layout: archive
-title: "Learning Journal"
-permalink: /journal/
-author_profile: true
-redirect_from:
-- /journal
----
-
-# My Learning Journey
-
-<!-- Timeline Container -->
-<div id="timeline" style="width: 100%; height: 500px;"></div>
-
-<!-- Corrected Vis.js Library Links -->
-<script src="https://unpkg.com/vis-timeline@7.4.6/standalone/umd/vis-timeline-graph2d.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/vis-timeline@7.4.6/styles/vis-timeline-graph2d.min.css">
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener("load", function() {
+    console.log("Page fully loaded, initializing timeline...");
+
     var container = document.getElementById("timeline");
     if (!container) {
         console.error("Error: Timeline container not found!");
         return;
     }
 
-    // Define groups (categories of learning)
     var groups = new vis.DataSet([
         { id: 1, content: "Courses", value: 1 },
         { id: 2, content: "Research", value: 2 },
         { id: 3, content: "Achievements", value: 3 }
     ]);
 
-    // Define timeline events
     var items = new vis.DataSet([
         { id: 1, group: 1, content: "Bayesian Networks Course", start: "2024-01" },
         { id: 2, group: 1, content: "ML & GIS Course", start: "2024-07" },
@@ -41,9 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20" }
     ]);
 
-    // Timeline options
     var options = {
-        groupOrder: (a, b) => a.value - b.value,
+        groupOrder: function (a, b) {
+            return a.value - b.value;
+        },
         stack: false,
         showCurrentTime: true,
         zoomable: false,
@@ -61,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
         var timeline = new vis.Timeline(container, items, options);
-        timeline.setGroups(groups);  // Correct way to set groups
+        timeline.setGroups(groups);
+        console.log("Timeline initialized successfully!");
     } catch (error) {
         console.error("Timeline creation error:", error);
         container.innerHTML = "Error loading timeline.";

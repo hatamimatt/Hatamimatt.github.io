@@ -16,6 +16,7 @@ redirect_from:
 <script src="https://unpkg.com/vis-timeline@7.4.6/standalone/umd/vis-timeline-graph2d.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/vis-timeline@7.4.6/styles/vis-timeline-graph2d.min.css">
 
+{% raw %}
 <!-- Timeline Script -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -27,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("❌ Error: Timeline container not found!");
         return;
     }
-
     console.log("✅ Timeline container found:", container);
 
     // Define groups (categories of learning)
@@ -77,3 +77,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
+{% endraw %}

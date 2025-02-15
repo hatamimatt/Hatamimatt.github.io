@@ -19,8 +19,8 @@ redirect_from:
 {% raw %}
 <!-- Timeline Script -->
 <script>
-window.onload = function() {
-    console.log("✅ Window loaded, initializing timeline...");
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("✅ DOMContentLoaded event fired. Initializing timeline...");
 
     // Get timeline container
     var container = document.getElementById("timeline");
@@ -49,18 +49,13 @@ window.onload = function() {
 
     // Timeline configuration options
     var options = {
-        groupOrder: function(a, b) {
-            return a.value - b.value;
-        },
+        groupOrder: function(a, b) { return a.value - b.value; },
         stack: false,
         showCurrentTime: true,
         zoomable: false,
         horizontalScroll: true,
         moveable: true,
-        wheel: {
-            zoomSpeed: 0,
-            deltaSpeed: 1
-        },
+        wheel: { zoomSpeed: 0, deltaSpeed: 1 },
         height: "500px",
         margin: { item: 10 },
         start: "2023-01-01",
@@ -76,6 +71,6 @@ window.onload = function() {
         console.error("❌ Timeline creation error:", error);
         container.innerHTML = "Error loading timeline.";
     }
-};
+});
 </script>
 {% endraw %}

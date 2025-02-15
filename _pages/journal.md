@@ -10,17 +10,15 @@ redirect_from:
 **# My Learning Journey**
 <!-- Timeline Container -->
 <div id="timeline" style="width: 100%; height: 500px;"></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 <!-- Include Vis.js Library with Integrity and Crossorigin attributes -->
 <script 
     src="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.6/vis-timeline-graph2d.min.js" 
-    integrity="sha512-SHF0iT1dsLkYBtmH9uZObaWGXF7Ot+HgaX5qQ45k37E4q+9YGN3jUEfMwp9gUAPkxgV3tIH2GsPSqwSAtUqmg==" 
     crossorigin="anonymous">
 </script>
 <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.6/vis-timeline-graph2d.min.css" 
-    integrity="sha512-SYyS55ZqHWmQ1RlgCo3mR4/WxjEBBNWbzjlA8NPZhGv2E4oq2xqZadZz3PqVpcz4qSRY3s2QBZ14UHF7coazqw==" 
     crossorigin="anonymous"
 />
 

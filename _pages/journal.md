@@ -7,23 +7,23 @@ redirect_from:
 - /journal
 ---
 
-**# My Learning Journey**
+# My Learning Journey
+
 <!-- Timeline Container -->
 <div id="timeline" style="width: 100%; height: 500px;"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
-<!-- Include Vis.js Library with Integrity and Crossorigin attributes -->
-<script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.6/vis-timeline-graph2d.min.js" 
-    crossorigin="anonymous">
-</script>
-<link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/vis-timeline/7.4.6/vis-timeline-graph2d.min.css" 
-    crossorigin="anonymous"
-/>
+
+<!-- Corrected Vis.js Library Links -->
+<script src="https://unpkg.com/vis-timeline@7.4.6/standalone/umd/vis-timeline-graph2d.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/vis-timeline@7.4.6/styles/vis-timeline-graph2d.min.css">
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById("timeline");
+    if (!container) {
+        console.error("Error: Timeline container not found!");
+        return;
+    }
+
     // Define groups (categories of learning)
     var groups = new vis.DataSet([
         { id: 1, content: "Courses", value: 1 },
@@ -41,11 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20" }
     ]);
 
-    // Timeline options with zoom disabled and horizontal scroll enabled
+    // Timeline options
     var options = {
-        groupOrder: function (a, b) {
-            return a.value - b.value;
-        },
+        groupOrder: (a, b) => a.value - b.value,
         stack: false,
         showCurrentTime: true,
         zoomable: false,
@@ -61,13 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         end: "2026-12-31"
     };
 
-    // Create timeline
-    var container = document.getElementById("timeline");
     try {
-        var timeline = new vis.Timeline(container, items, groups, options);
-    } catch (err) {
-        console.error("Timeline creation error:", err);
-        container.innerHTML = "Error loading timeline. Please check console for details.";
+        var timeline = new vis.Timeline(container, items, options);
+        timeline.setGroups(groups);  // Correct way to set groups
+    } catch (error) {
+        console.error("Timeline creation error:", error);
+        container.innerHTML = "Error loading timeline.";
     }
 });
 </script>

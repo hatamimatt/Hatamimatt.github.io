@@ -19,25 +19,25 @@ redirect_from:
 {% raw %}
 <!-- Timeline Script -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("✅ Page fully loaded, initializing timeline...");
+window.onload = function() {
+    console.log("✅ Window loaded, initializing timeline...");
 
-    // Check if the container exists
+    // Get timeline container
     var container = document.getElementById("timeline");
     if (!container) {
-        console.error("❌ Error: Timeline container not found!");
+        console.error("❌ Timeline container not found!");
         return;
     }
     console.log("✅ Timeline container found:", container);
 
-    // Define groups (categories of learning)
+    // Define groups for the timeline
     var groups = new vis.DataSet([
         { id: 1, content: "Courses", value: 1 },
         { id: 2, content: "Research", value: 2 },
         { id: 3, content: "Achievements", value: 3 }
     ]);
 
-    // Define timeline events
+    // Define timeline events (items)
     var items = new vis.DataSet([
         { id: 1, group: 1, content: "Bayesian Networks Course", start: "2024-01" },
         { id: 2, group: 1, content: "ML & GIS Course", start: "2024-07" },
@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: 6, group: 3, content: "Presented at GIS Day", start: "2024-11-20" }
     ]);
 
-    // Timeline options
+    // Timeline configuration options
     var options = {
-        groupOrder: function (a, b) {
+        groupOrder: function(a, b) {
             return a.value - b.value;
         },
         stack: false,
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     try {
+        // Initialize timeline
         var timeline = new vis.Timeline(container, items, options);
         timeline.setGroups(groups);
         console.log("✅ Timeline initialized successfully!");
@@ -75,6 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("❌ Timeline creation error:", error);
         container.innerHTML = "Error loading timeline.";
     }
-});
+};
 </script>
 {% endraw %}

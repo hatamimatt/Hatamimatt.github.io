@@ -1,3 +1,6 @@
+// Simple test to see if JavaScript is running
+console.log('Script.js loaded!');
+
 // Multi-line Typing Animation
 class MultiLineTypeWriter {
     constructor() {
@@ -172,7 +175,107 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(err => {
         console.error("Error loading about.md:", err);
       });
+      
+    console.log('About.md loaded, now setting up EmailJS...');
+      
+    // EMAILJS SETUP - Add this here
+    console.log('=== EMAILJS SETUP STARTING ===');
+    console.log('Setting up EmailJS...');
+    console.log('EmailJS available:', typeof emailjs);
+    console.log('EmailJS object:', emailjs);
+    
+    // Check if EmailJS is loaded
+    if (typeof emailjs === 'undefined') {
+        console.error('EmailJS is not loaded!');
+        return;
+    }
+    
+    // Initialize EmailJS
+    emailjs.init("6l6wMbqUhp1iOrsu2");
+    console.log('EmailJS initialized');
+    
+    const contactForm = document.getElementById('contact-form');
+    console.log('Contact form found:', contactForm);
+    
+    if (contactForm) {
+        // Add both form submit and button click listeners
+        contactForm.addEventListener('submit', handleFormSubmit);
+        
+        // Also add a direct click listener to the submit button as backup
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        if (submitButton) {
+            submitButton.addEventListener('click', function(e) {
+                console.log('Submit button clicked!');
+                // Don't prevent default here, let the form submit event handle it
+            });
+        }
+        
+        console.log('Contact form event listener added');
+    } else {
+        console.error('Contact form not found!');
+    }
 });
+
+function handleFormSubmit(e) {
+    e.preventDefault();
+    console.log('Form submitted!');
+    
+    // Get form data
+    const name = this.querySelector('input[name="user_name"]').value;
+    const email = this.querySelector('input[name="user_email"]').value;
+    const message = this.querySelector('textarea[name="message"]').value;
+    
+    console.log('Form data:', { name, email, message });
+    
+    // Simple validation
+    if (!name || !email || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // Show loading state
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    // Prepare template parameters
+    const templateParams = {
+        to_name: 'Matt Hatami',
+        from_name: name,
+        from_email: email,
+        message: message,
+        reply_to: email
+    };
+    
+    // Send email using EmailJS
+    console.log('Sending email with params:', templateParams);
+    console.log('EmailJS object:', emailjs);
+    console.log('Service ID: service_xi6qi1j');
+    console.log('Template ID: template_vjd6iil');
+    
+    emailjs.send('service_xi6qi1j', 'template_vjd6iil', templateParams)
+        .then(function(response) {
+            console.log('=== EMAILJS SUCCESS ===');
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        }.bind(this), function(error) {
+            console.log('=== EMAILJS FAILED ===');
+            console.log('FAILED...', error);
+            console.log('Error details:', {
+                status: error.status,
+                text: error.text,
+                user: error.user
+            });
+            alert('Sorry, there was an error sending your message. Error: ' + error.text + '. Please try again or contact me directly at HatamiMatt@gmail.com');
+        })
+        .finally(function() {
+            // Reset button state
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+}
 
 // Typing Animation (keeping for backward compatibility)
 class TypeWriter {
@@ -280,32 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Form submission handling
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const message = this.querySelector('textarea').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // Here you would typically send the data to a server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
-    }
-});
+// Simple test to see if JavaScript is running
+console.log('Script.js loaded!');
 
 // Add loading animation
 window.addEventListener('load', () => {

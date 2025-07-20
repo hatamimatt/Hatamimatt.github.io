@@ -415,15 +415,15 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" placeholder="Your Name" name="user_name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" placeholder="Your Email" name="user_email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea placeholder="Your Message" rows="5" name="message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -432,6 +432,14 @@
         </div>
     </section>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        console.log('Inline script test - HTML loaded');
+        console.log('EmailJS available:', typeof emailjs !== 'undefined');
+    </script>
+    <script>
+        console.log('About to load script.js...');
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 

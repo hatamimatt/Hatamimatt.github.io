@@ -1,5 +1,17 @@
 # Featured Work
 
+## Interactive Distribution Playground
+
+![Interactive Distribution Playground](assets/images/img1.jpeg)
+
+Interactive web application for exploring probability distributions in real-time. Built with Streamlit, featuring parameter adjustment, multiple distribution comparison, and mathematical context display.
+
+**Tags:** Streamlit, Statistics, Data Visualization, Web App
+
+[View Project](projects/interactive-distribution-playground.md) | [Try Live App](https://distributionplaygroundpy-lrxuyld3rdswjs4ucblhxn.streamlit.app/)
+
+---
+
 ## Coastal Vulnerability Dashboard
 
 ![Coastal Vulnerability Dashboard](assets/images/img1.jpeg)

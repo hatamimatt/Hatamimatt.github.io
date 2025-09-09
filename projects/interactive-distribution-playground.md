@@ -6,6 +6,21 @@
 
 I've created an interactive web application that allows users to explore probability distributions in real-time. Built with Streamlit, this tool provides an intuitive interface for visualizing and comparing different statistical distributions, making complex probability concepts more accessible and engaging.
 
+## Try It Live
+
+<div style="position:relative;padding-top:56.25%;height:0;overflow:hidden;border:1px solid #e6e6e6;border-radius:8px;margin:20px 0">
+  <iframe
+    src="https://distributionplaygroundpy-lrxuyld3rdswjs4ucblhxn.streamlit.app/"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+    allow="clipboard-write; fullscreen"
+    loading="lazy"
+    title="Interactive Distribution Playground"
+  ></iframe>
+</div>
+<p style="margin-top:8px;text-align:center">
+  <strong>Open full screen:</strong> <a href="https://distributionplaygroundpy-lrxuyld3rdswjs4ucblhxn.streamlit.app/" target="_blank" rel="noopener">Interactive Distribution Playground</a>
+</p>
+
 ## The Problem
 
 Understanding probability distributions can be challenging, especially when trying to grasp how different parameters affect the shape and behavior of distributions. Traditional static plots in textbooks or academic papers don't allow for interactive exploration, making it difficult to develop an intuitive understanding of these fundamental statistical concepts.
